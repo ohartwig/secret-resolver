@@ -1,0 +1,24 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Moselwal\SecretResolver\:
+    resource: '../Classes/'
+    exclude:
+      - '../Classes/Domain/Enum/*'
+      - '../Classes/Domain/ValueObject/*'
+
+  _instanceof:
+    Moselwal\SecretResolver\Domain\Contract\SecretProviderInterface:
+      tags: ['secretresolver.provider']
+
+  Moselwal\SecretResolver\Application\Service\SecretResolverService:
+    arguments:
+      $providers: !tagged_iterator
+        tag: 'secretresolver.provider'
+        default_priority_method: 'priority'
+
+  Moselwal\SecretResolver\Infrastructure\Processor\SecretPlaceholderProcessor:
+    public: true

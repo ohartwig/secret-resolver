@@ -1,0 +1,48 @@
+{
+    "name": "moselwal/secret-resolver",
+    "type": "typo3-cms-extension",
+    "description": "Runtime secret resolution for TYPO3 site configuration — cascading lookup from secret files, /run/secrets/ mounts, and environment variables via %secret(KEY)% placeholder syntax.",
+    "license": "GPL-2.0-or-later",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://gitlab.moselwal.io/api/v4/group/175/-/packages/composer/packages.json"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "typo3/cms-core": "^14.0"
+    },
+    "require-dev": {
+        "moselwal/dev": "*",
+        "phpunit/phpunit": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Moselwal\\SecretResolver\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Moselwal\\SecretResolver\\Tests\\": "Tests/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "secret_resolver"
+        }
+    },
+    "scripts": {
+        "test": "phpunit -c Tests/phpunit.xml --testsuite Unit",
+        "phpstan": "phpstan analyse",
+        "deptrac": "deptrac analyse"
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true,
+            "phpstan/extension-installer": true,
+            "sbuerk/typo3-cmscomposerinstallers-testingframework-bridge": true
+        }
+    }
+}
