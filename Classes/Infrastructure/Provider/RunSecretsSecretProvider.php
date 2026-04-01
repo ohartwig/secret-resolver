@@ -32,7 +32,7 @@ final readonly class RunSecretsSecretProvider implements SecretProviderInterface
         return $value !== '' ? $value : null;
     }
 
-    public function priority(): int
+    public static function priority(): int
     {
         return self::PRIORITY;
     }

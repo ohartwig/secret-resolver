@@ -17,5 +17,5 @@ interface SecretProviderInterface
 
     public function resolve(SecretKey $key): ?string;
 
-    public function priority(): int;
+    public static function priority(): int;
 }

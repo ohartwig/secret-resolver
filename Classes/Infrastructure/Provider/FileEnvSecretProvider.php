@@ -31,7 +31,7 @@ final readonly class FileEnvSecretProvider implements SecretProviderInterface
         return $this->readTrimmedFileContent($filePath);
     }
 
-    public function priority(): int
+    public static function priority(): int
     {
         return self::PRIORITY;
     }
