@@ -1,17 +1,17 @@
 # moselwal/secret-resolver
 
-Runtime-Secret-Auflösung für TYPO3 Site Configuration.
+Runtime secret resolution for TYPO3 site configuration.
 
-## Was macht diese Extension?
+## What does this extension do?
 
-TYPO3 unterstützt `%env(VAR)%` in Site Configuration YAML — aber nur einfache Umgebungsvariablen. In Container- und Kubernetes-Umgebungen werden Secrets oft als Dateien gemountet (`/run/secrets/`) oder über `*_FILE`-Env-Variablen referenziert.
+TYPO3 supports `%env(VAR)%` in site configuration YAML — but only for plain environment variables. In container and Kubernetes environments, secrets are often mounted as files (`/run/secrets/`) or referenced via `*_FILE` environment variables.
 
-Diese Extension fügt die Syntax `%secret(KEY)%` hinzu, die Secrets aus Dateien auflöst:
+This extension adds the `%secret(KEY)%` syntax that resolves secrets from files:
 
-1. **`KEY_FILE`-Env** — Liest den Dateipfad aus `${KEY}_FILE` und liest die Datei (Docker Swarm Pattern)
-2. **`/run/secrets/`** — Liest `/run/secrets/${key}` (Docker/K8s Secret-Mount)
+1. **`KEY_FILE` env** — Reads the file path from `${KEY}_FILE` and reads the file content (Docker Swarm pattern)
+2. **`/run/secrets/`** — Reads `/run/secrets/${key}` (Docker/K8s secret mount)
 
-Für direkte Umgebungsvariablen: TYPO3 Core `%env(KEY)%` verwenden.
+For plain environment variables, use TYPO3 Core's `%env(KEY)%`.
 
 ## Installation
 
@@ -19,7 +19,7 @@ Für direkte Umgebungsvariablen: TYPO3 Core `%env(KEY)%` verwenden.
 composer require moselwal/secret-resolver
 ```
 
-## Nutzung
+## Usage
 
 ```yaml
 # config/sites/main/config.yaml
@@ -28,32 +28,32 @@ base: 'https://example.com/'
 apiKey: '%secret(API_KEY)%'
 dbPassword: '%secret(DB_PASSWORD)%'
 
-# Inline in Strings:
+# Inline in strings:
 dsn: 'mysql://user:%secret(DB_PASSWORD)%@db:3306/app'
 ```
 
-## Kaskade im Detail
+## Resolution cascade
 
-Für `%secret(DB_PASSWORD)%`:
+For `%secret(DB_PASSWORD)%`:
 
-| Schritt | Quelle | Beispiel |
+| Step | Source | Example |
 |---|---|---|
-| 1 | `DB_PASSWORD_FILE` Env → Datei lesen | `DB_PASSWORD_FILE=/vault/secrets/db-pass` |
-| 2 | `/run/secrets/db_password` | Docker/K8s Secret-Mount |
+| 1 | `DB_PASSWORD_FILE` env → read file | `DB_PASSWORD_FILE=/vault/secrets/db-pass` |
+| 2 | `/run/secrets/db_password` | Docker/K8s secret mount |
 
-Der erste Treffer gewinnt. Leere Werte und reine Whitespace-Dateien werden übersprungen.
+First match wins. Empty values and whitespace-only files are skipped.
 
 ## Caching
 
-Aufgelöste Werte werden von TYPO3 in `cache.core` gecached (identisch zu `%env()%`). Nach Secret-Rotation:
+Resolved values are cached by TYPO3 in `cache.core` (identical to `%env()%`). After secret rotation:
 
 ```bash
 vendor/bin/typo3 cache:flush
 ```
 
-## Eigene Provider
+## Custom providers
 
-Die Extension ist über `SecretProviderInterface` erweiterbar:
+The extension is extensible via `SecretProviderInterface`:
 
 ```php
 use Moselwal\SecretResolver\Domain\Contract\SecretProviderInterface;
@@ -63,26 +63,26 @@ final readonly class VaultSecretProvider implements SecretProviderInterface
 {
     public function supports(SecretKey $key): bool
     {
-        // Vault-spezifische Logik
+        // Vault-specific logic
         return true;
     }
 
     public function resolve(SecretKey $key): ?string
     {
-        // Vault API aufrufen
+        // Call Vault API
         return $vaultClient->getSecret($key->raw);
     }
 
     public function priority(): int
     {
-        return 40; // Vor FileEnv (30)
+        return 40; // Before FileEnv (30)
     }
 }
 ```
 
-Provider werden via `_instanceof`-Tag in `Services.yaml` automatisch registriert.
+Providers are automatically registered via `_instanceof` tag in `Services.yaml`.
 
-## Anforderungen
+## Requirements
 
 - PHP ^8.3
 - TYPO3 ^14.0
