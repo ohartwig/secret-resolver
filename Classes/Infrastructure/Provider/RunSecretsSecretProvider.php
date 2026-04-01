@@ -14,6 +14,8 @@ use Moselwal\SecretResolver\Domain\ValueObject\SecretKey;
 
 final readonly class RunSecretsSecretProvider implements SecretProviderInterface
 {
+    private const PRIORITY = 20;
+
     public function supports(SecretKey $key): bool
     {
         return is_readable($key->runSecretsPath);
@@ -32,6 +34,6 @@ final readonly class RunSecretsSecretProvider implements SecretProviderInterface
 
     public function priority(): int
     {
-        return 20;
+        return self::PRIORITY;
     }
 }

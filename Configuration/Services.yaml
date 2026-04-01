@@ -7,7 +7,6 @@ services:
   Moselwal\SecretResolver\:
     resource: '../Classes/'
     exclude:
-      - '../Classes/Domain/Enum/*'
       - '../Classes/Domain/ValueObject/*'
 
   _instanceof:

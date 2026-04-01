@@ -21,13 +21,9 @@ final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorI
         return str_contains($placeholder, '%secret(');
     }
 
-    /**
-     * @param array<string, mixed> $referenceArray
-     */
     public function process(string $value, array $referenceArray): string
     {
         $key = new SecretKey($value);
-        /** @var SecretResolverService $service */
         $service = GeneralUtility::makeInstance(SecretResolverService::class);
         $resolved = $service->resolve($key);
 
