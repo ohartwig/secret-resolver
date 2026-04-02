@@ -31,11 +31,11 @@ final class SecretResolverServiceTest extends TestCase
     #[Test]
     public function resolveReturnsValueFromFirstSupportingProvider(): void
     {
-        $provider1 = $this->createMock(SecretProviderInterface::class);
+        $provider1 = $this->createStub(SecretProviderInterface::class);
         $provider1->method('supports')->willReturn(true);
         $provider1->method('resolve')->willReturn('secret-value');
 
-        $provider2 = $this->createMock(SecretProviderInterface::class);
+        $provider2 = $this->createStub(SecretProviderInterface::class);
         $provider2->method('supports')->willReturn(true);
         $provider2->method('resolve')->willReturn('other-value');
 
@@ -52,7 +52,7 @@ final class SecretResolverServiceTest extends TestCase
         $unsupported->method('supports')->willReturn(false);
         $unsupported->expects(self::never())->method('resolve');
 
-        $supported = $this->createMock(SecretProviderInterface::class);
+        $supported = $this->createStub(SecretProviderInterface::class);
         $supported->method('supports')->willReturn(true);
         $supported->method('resolve')->willReturn('found');
 
@@ -65,11 +65,11 @@ final class SecretResolverServiceTest extends TestCase
     #[Test]
     public function resolveSkipsProviderReturningNull(): void
     {
-        $nullProvider = $this->createMock(SecretProviderInterface::class);
+        $nullProvider = $this->createStub(SecretProviderInterface::class);
         $nullProvider->method('supports')->willReturn(true);
         $nullProvider->method('resolve')->willReturn(null);
 
-        $valueProvider = $this->createMock(SecretProviderInterface::class);
+        $valueProvider = $this->createStub(SecretProviderInterface::class);
         $valueProvider->method('supports')->willReturn(true);
         $valueProvider->method('resolve')->willReturn('fallback-value');
 
@@ -82,7 +82,7 @@ final class SecretResolverServiceTest extends TestCase
     #[Test]
     public function resolveReturnsNullWhenAllProvidersReturnNull(): void
     {
-        $provider = $this->createMock(SecretProviderInterface::class);
+        $provider = $this->createStub(SecretProviderInterface::class);
         $provider->method('supports')->willReturn(true);
         $provider->method('resolve')->willReturn(null);
 

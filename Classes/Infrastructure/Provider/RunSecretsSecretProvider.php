@@ -15,19 +15,23 @@ use Moselwal\SecretResolver\Domain\ValueObject\SecretKey;
 final readonly class RunSecretsSecretProvider implements SecretProviderInterface
 {
     private const PRIORITY = 20;
+    private const BASE_PATH = '/run/secrets/';
 
     public function supports(SecretKey $key): bool
     {
-        return is_readable($key->runSecretsPath);
+        return is_readable(self::BASE_PATH . $key->lowerCase);
     }
 
     public function resolve(SecretKey $key): ?string
     {
-        if (!is_readable($key->runSecretsPath)) {
+        $path = self::BASE_PATH . $key->lowerCase;
+
+        $value = @file_get_contents($path);
+        if ($value === false) {
             return null;
         }
 
-        $value = trim((string)file_get_contents($key->runSecretsPath));
+        $value = trim($value);
 
         return $value !== '' ? $value : null;
     }

@@ -16,11 +16,18 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorInterface
 {
+    /** @param array<string, mixed> $referenceArray */
     public function canProcess(string $placeholder, array $referenceArray): bool
     {
         return str_contains($placeholder, '%secret(');
     }
 
+    /**
+     * @param array<string, mixed> $referenceArray
+     *
+     * Constructor injection is not possible here — TYPO3 instantiates
+     * PlaceholderProcessors via the YAML loader without the DI container.
+     */
     public function process(string $value, array $referenceArray): string
     {
         $key = new SecretKey($value);
@@ -29,8 +36,8 @@ final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorI
 
         if ($resolved === null) {
             throw new \UnexpectedValueException(
-                sprintf('Secret "%s" could not be resolved from any source', $value),
-                1743500000
+                'A configured secret could not be resolved from any source',
+                1743500000,
             );
         }
 

@@ -38,7 +38,8 @@ final readonly class FileEnvSecretProvider implements SecretProviderInterface
 
     private function readFilePathFromEnv(SecretKey $key): ?string
     {
-        $filePath = trim((string)(getenv($key->fileEnvKey) ?: ''));
+        $envKey = $key->upperCase . '_FILE';
+        $filePath = trim((string)(getenv($envKey) ?: ''));
         if ($filePath === '' || !is_readable($filePath)) {
             return null;
         }
@@ -48,7 +49,12 @@ final readonly class FileEnvSecretProvider implements SecretProviderInterface
 
     private function readTrimmedFileContent(string $filePath): ?string
     {
-        $value = trim((string)file_get_contents($filePath));
+        $value = @file_get_contents($filePath);
+        if ($value === false) {
+            return null;
+        }
+
+        $value = trim($value);
 
         return $value !== '' ? $value : null;
     }

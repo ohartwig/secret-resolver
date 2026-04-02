@@ -62,6 +62,16 @@ final class FileEnvSecretProviderTest extends TestCase
     }
 
     #[Test]
+    public function supportsReturnsFalseWhenEnvPointsToNonExistentFile(): void
+    {
+        putenv('TEST_SECRET_FILE=/tmp/nonexistent_secret_file_xyz_99999');
+
+        $key = new SecretKey('TEST_SECRET');
+
+        self::assertFalse($this->provider->supports($key));
+    }
+
+    #[Test]
     public function resolveReturnsFileContent(): void
     {
         $this->tempFile = tempnam(sys_get_temp_dir(), 'secret_test_');
