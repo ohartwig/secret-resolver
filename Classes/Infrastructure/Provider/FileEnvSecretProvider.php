@@ -36,6 +36,11 @@ final readonly class FileEnvSecretProvider implements SecretProviderInterface
         return self::PRIORITY;
     }
 
+    public function getName(): string
+    {
+        return '';
+    }
+
     private function readFilePathFromEnv(SecretKey $key): ?string
     {
         $envKey = $key->upperCase . '_FILE';

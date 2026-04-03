@@ -21,6 +21,40 @@ final readonly class SecretResolverService
 
     public function resolve(SecretKey $key): ?string
     {
+        $value = $key->isExtended()
+            ? $this->resolveTargeted($key)
+            : $this->resolveCascade($key);
+
+        if ($value === null) {
+            return null;
+        }
+
+        if ($key->subKey !== null) {
+            return $this->extractSubKey($value, $key->subKey);
+        }
+
+        return $value;
+    }
+
+    private function resolveTargeted(SecretKey $key): ?string
+    {
+        foreach ($this->providers as $provider) {
+            if ($provider->getName() !== $key->provider) {
+                continue;
+            }
+
+            if (!$provider->supports($key)) {
+                return null;
+            }
+
+            return $provider->resolve($key);
+        }
+
+        return null;
+    }
+
+    private function resolveCascade(SecretKey $key): ?string
+    {
         foreach ($this->providers as $provider) {
             if (!$provider->supports($key)) {
                 continue;
@@ -33,5 +67,17 @@ final readonly class SecretResolverService
         }
 
         return null;
+    }
+
+    private function extractSubKey(string $value, string $subKey): ?string
+    {
+        $decoded = json_decode($value, true);
+        if (!is_array($decoded) || !array_key_exists($subKey, $decoded)) {
+            return null;
+        }
+
+        $result = $decoded[$subKey];
+
+        return is_string($result) ? $result : json_encode($result, JSON_THROW_ON_ERROR);
     }
 }

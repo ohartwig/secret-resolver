@@ -40,4 +40,9 @@ final readonly class RunSecretsSecretProvider implements SecretProviderInterface
     {
         return self::PRIORITY;
     }
+
+    public function getName(): string
+    {
+        return '';
+    }
 }

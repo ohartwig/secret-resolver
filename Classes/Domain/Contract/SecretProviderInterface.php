@@ -18,4 +18,11 @@ interface SecretProviderInterface
     public function resolve(SecretKey $key): ?string;
 
     public static function priority(): int;
+
+    /**
+     * Provider name for targeted resolution via extended key format.
+     * Return empty string to participate only in the cascade (default behavior).
+     * Example: 'vault', 'aws', 'azure'
+     */
+    public function getName(): string;
 }
