@@ -41,10 +41,7 @@ final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorI
         $resolved = $service->resolve($key);
 
         if ($resolved === null) {
-            throw new \UnexpectedValueException(
-                'A configured secret could not be resolved from any source',
-                1743500000,
-            );
+            return '';
         }
 
         return $resolved;
