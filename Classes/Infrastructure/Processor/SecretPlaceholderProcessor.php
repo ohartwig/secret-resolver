@@ -11,8 +11,9 @@ namespace Moselwal\SecretResolver\Infrastructure\Processor;
 
 use Moselwal\SecretResolver\Application\Service\SecretResolverService;
 use Moselwal\SecretResolver\Domain\ValueObject\SecretKey;
+use Moselwal\SecretResolver\Infrastructure\Provider\FileEnvSecretProvider;
+use Moselwal\SecretResolver\Infrastructure\Provider\RunSecretsSecretProvider;
 use TYPO3\CMS\Core\Configuration\Processor\Placeholder\PlaceholderProcessorInterface;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorInterface
 {
@@ -31,7 +32,12 @@ final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorI
     public function process(string $value, array $referenceArray): string
     {
         $key = new SecretKey($value);
-        $service = GeneralUtility::makeInstance(SecretResolverService::class);
+
+        $service = new SecretResolverService([
+            new FileEnvSecretProvider(),
+            new RunSecretsSecretProvider(),
+        ]);
+
         $resolved = $service->resolve($key);
 
         if ($resolved === null) {
