@@ -12,7 +12,7 @@ This extension adds the `%secret(KEY)%` syntax that resolves secrets from config
 
 ```bash
 composer require moselwal/secret-resolver
-```
+```text
 
 ## Usage
 
@@ -38,7 +38,7 @@ apiToken: '%secret(vault:transit/api_token)%'
 
 # AWS Secrets Manager
 dbPassword: '%secret(aws-sm:prod/database.password)%'
-```
+```text
 
 Extended key format: `%secret(provider:path/to/secret.subKey)%`
 
@@ -145,7 +145,7 @@ final readonly class VaultSecretProvider implements SecretProviderInterface
         return 40; // Vault is checked before file-based providers
     }
 }
-```
+```text
 
 ### Step 2: Register via Services.yaml
 
@@ -177,7 +177,7 @@ dbPassword: '%secret(vault:kv-v2/database.password)%'
 
 # Extended key — full secret path, no sub-key extraction
 certificate: '%secret(vault:pki/issue/my-cert)%'
-```
+```text
 
 ### SecretKey properties available to providers
 
