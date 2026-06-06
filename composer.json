@@ -3,7 +3,14 @@
     "type": "typo3-cms-extension",
     "description": "Runtime secret resolution for TYPO3 site configuration — cascading lookup from secret files, /run/secrets/ mounts, and environment variables via %secret(KEY)% placeholder syntax.",
     "license": "MIT",
-    "keywords": ["typo3", "secrets", "docker-secrets", "env", "configuration", "12factor"],
+    "keywords": [
+        "typo3",
+        "secrets",
+        "docker-secrets",
+        "env",
+        "configuration",
+        "12factor"
+    ],
     "authors": [
         {
             "name": "Moselwal Digitalagentur GmbH",
@@ -17,6 +24,7 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://moselwal.de",
     "support": {
         "issues": "https://github.com/Moselwal-Digitalagentur/secret-resolver/issues",
         "source": "https://github.com/Moselwal-Digitalagentur/secret-resolver"
