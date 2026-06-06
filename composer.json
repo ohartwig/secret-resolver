@@ -1,8 +1,8 @@
 {
     "name": "moselwal/secret-resolver",
-    "type": "typo3-cms-extension",
     "description": "Runtime secret resolution for TYPO3 site configuration — cascading lookup from secret files, /run/secrets/ mounts, and environment variables via %secret(KEY)% placeholder syntax.",
     "license": "MIT",
+    "type": "typo3-cms-extension",
     "keywords": [
         "typo3",
         "secrets",
@@ -29,19 +29,20 @@
         "issues": "https://github.com/Moselwal-Digitalagentur/secret-resolver/issues",
         "source": "https://github.com/Moselwal-Digitalagentur/secret-resolver"
     },
+    "require": {
+        "php": "^8.5",
+        "typo3/cms-core": "^14.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.52",
+        "moselwal/dev": "^5.0"
+    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://gitlab.moselwal.io/api/v4/group/175/-/packages/composer/packages.json"
         }
     ],
-    "require": {
-        "php": "^8.5",
-        "typo3/cms-core": "^14.0"
-    },
-    "require-dev": {
-        "moselwal/dev": "^5.0"
-    },
     "autoload": {
         "psr-4": {
             "Moselwal\\SecretResolver\\": "Classes/"
@@ -52,22 +53,23 @@
             "Moselwal\\SecretResolver\\Tests\\": "Tests/"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true,
+            "sbuerk/typo3-cmscomposerinstallers-testingframework-bridge": true,
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        }
+    },
     "extra": {
         "typo3/cms": {
             "extension-key": "secret_resolver"
         }
     },
     "scripts": {
-        "test": "phpunit -c Tests/phpunit.xml --testsuite Unit",
+        "deptrac": "deptrac analyse",
         "phpstan": "phpstan analyse",
-        "deptrac": "deptrac analyse"
-    },
-    "config": {
-        "allow-plugins": {
-            "typo3/class-alias-loader": true,
-            "typo3/cms-composer-installers": true,
-            "phpstan/extension-installer": true,
-            "sbuerk/typo3-cmscomposerinstallers-testingframework-bridge": true
-        }
+        "test": "phpunit -c Tests/phpunit.xml --testsuite Unit"
     }
 }
