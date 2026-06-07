@@ -1,3 +1,10 @@
+## [0.5.1](https://gitlab.moselwal.io/development/moselwal/secret-resolver/compare/v0.5.0...v0.5.1) (2026-06-07)
+
+
+### Bug Fixes
+
+* **release:** drop [skip ci] from semantic-release commit ([3a14066](https://gitlab.moselwal.io/development/moselwal/secret-resolver/commit/3a14066659690f9c3a6574ac69362378ea75cea7))
+
 # [0.5.0](https://gitlab.moselwal.io/development/moselwal/secret-resolver/compare/v0.4.1...v0.5.0) (2026-06-07)
 
 
