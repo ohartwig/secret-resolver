@@ -1,3 +1,16 @@
+# [0.6.0](https://gitlab.moselwal.io/development/moselwal/secret-resolver/compare/v0.5.1...v0.6.0) (2026-06-10)
+
+
+### Bug Fixes
+
+* **deps:** bump extension-clean-export to 1.2.2 (TER tailor fix) ([8b6a488](https://gitlab.moselwal.io/development/moselwal/secret-resolver/commit/8b6a4880a26ed0ca0ad546b7d5094ed347b61077))
+* **security:** allowlist extended secret-key path segments (M9) ([4bee8f5](https://gitlab.moselwal.io/development/moselwal/secret-resolver/commit/4bee8f564c748fc22db00d21020568f3bb8db8a4))
+
+
+### Features
+
+* **release:** add develop branch as rc-prerelease channel ([2068d7a](https://gitlab.moselwal.io/development/moselwal/secret-resolver/commit/2068d7a93603688c0cac583bf94c75a8516284db))
+
 ## [0.5.1](https://gitlab.moselwal.io/development/moselwal/secret-resolver/compare/v0.5.0...v0.5.1) (2026-06-07)
 
 
