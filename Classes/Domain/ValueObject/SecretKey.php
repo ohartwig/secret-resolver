@@ -15,6 +15,15 @@ final readonly class SecretKey
     private const LEGACY_PATTERN = '/^[A-Za-z][A-Za-z0-9_]*$/';
     private const PROVIDER_PATTERN = '/^[a-z][a-z0-9_-]*$/';
     private const SUBKEY_PATTERN = '/^[A-Za-z][A-Za-z0-9_]*$/';
+    // SECURITY (audit M9): path segments after the provider prefix must
+    // be filename-safe — no traversal ('..'), no absolute paths (leading
+    // '/'), no shell-metacharacters. Today the only consumer that ever
+    // dereferences a path is the Vault provider (HTTP path), so the
+    // current attack surface is small; but every future provider (KV
+    // store, file-backed dev provider, K8s SecretRef) inherits the
+    // ValueObject and would inherit the gap. Validating here closes the
+    // door once.
+    private const PATH_SEGMENT_PATTERN = '/^[A-Za-z0-9_-][A-Za-z0-9._-]*$/';
 
     public string $upperCase;
     public string $lowerCase;
@@ -34,6 +43,7 @@ final readonly class SecretKey
 
         if (str_contains($raw, ':')) {
             [$this->provider, $remainder] = $this->parseExtendedFormat($raw);
+            $this->validateExtendedRemainder($remainder);
             [$keyPart, $this->subKey] = $this->extractSubKey($remainder);
             $this->path = str_contains($keyPart, '/') ? $keyPart : null;
             $this->upperCase = strtoupper($remainder);
@@ -137,6 +147,41 @@ final readonly class SecretKey
         }
 
         return [$remainder, null];
+    }
+
+    /**
+     * Reject path-traversal, absolute-path or shell-metacharacter remainders
+     * after the provider prefix. See PATH_SEGMENT_PATTERN above for the
+     * full rationale. Empty remainder is already rejected upstream in
+     * parseExtendedFormat().
+     */
+    private function validateExtendedRemainder(string $remainder): void
+    {
+        if (str_starts_with($remainder, '/')) {
+            throw new \InvalidArgumentException(
+                'Extended secret-key path must be relative; absolute paths are rejected',
+                1743500104,
+            );
+        }
+
+        foreach (explode('/', $remainder) as $segment) {
+            if ($segment === '' || $segment === '.' || $segment === '..') {
+                throw new \InvalidArgumentException(
+                    'Extended secret-key path contains empty / dot / dot-dot segment',
+                    1743500105,
+                );
+            }
+            if (preg_match(self::PATH_SEGMENT_PATTERN, $segment) !== 1) {
+                throw new \InvalidArgumentException(
+                    sprintf(
+                        'Extended secret-key path segment must match %s, got: "%s"',
+                        self::PATH_SEGMENT_PATTERN,
+                        $segment,
+                    ),
+                    1743500106,
+                );
+            }
+        }
     }
 
     private function validateLegacyKey(string $raw): void
