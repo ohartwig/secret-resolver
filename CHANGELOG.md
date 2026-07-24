@@ -1,3 +1,11 @@
+## [0.6.1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.0...v0.6.1) (2026-07-24)
+
+
+### Bug Fixes
+
+* **ci:** adopt github-mirror 1.2.10 (skip mirror when no token) ([f4df864](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/f4df864ee6170abf5e6e0e6fb906a727795fc4d8))
+* **ci:** github-mirror 1.2.11 (contains skip-if-no-token) ([40531e7](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/40531e74029008326d4dd8baf055db500186bbd0))
+
 # [0.6.0](https://gitlab.moselwal.io/development/moselwal/secret-resolver/compare/v0.5.1...v0.6.0) (2026-06-10)
 
 
