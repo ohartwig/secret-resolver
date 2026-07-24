@@ -1,3 +1,11 @@
+## [0.6.2](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.1...v0.6.2) (2026-07-24)
+
+
+### Bug Fixes
+
+* **ci:** drop ter-publish (no TER publishing for now) ([0044005](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/00440053a64205abb32b8ec4de769f9d417eb72d))
+* **ci:** ter-publish 1.2.12 (az1a IPv4 for tailor install) ([f9af4b1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/f9af4b1d54af06ec47d90d07845bfa5bc23b7fcd))
+
 ## [0.6.1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.0...v0.6.1) (2026-07-24)
 
 
