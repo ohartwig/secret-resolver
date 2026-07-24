@@ -1,3 +1,10 @@
+## [0.6.3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.2...v0.6.3) (2026-07-24)
+
+
+### Bug Fixes
+
+* **ci:** drop github-mirror (no public mirroring for now) ([c3ff8aa](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c3ff8aae594557e8c59cd29841fec413a5033c9b))
+
 ## [0.6.2](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.1...v0.6.2) (2026-07-24)
 
 
