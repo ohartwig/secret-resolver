@@ -17,14 +17,18 @@ use TYPO3\CMS\Core\Configuration\Processor\Placeholder\PlaceholderProcessorInter
 
 final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorInterface
 {
-    /** @param array<string, mixed> $referenceArray */
+    /**
+     * @param array<array-key, mixed> $referenceArray the interface declares a plain
+     *        array, so the signature must too — narrowing it there is a
+     *        contravariance violation
+     */
     public function canProcess(string $placeholder, array $referenceArray): bool
     {
         return str_contains($placeholder, '%secret(');
     }
 
     /**
-     * @param array<string, mixed> $referenceArray
+     * @param array<array-key, mixed> $referenceArray see canProcess()
      *
      * Constructor injection is not possible here — TYPO3 instantiates
      * PlaceholderProcessors via the YAML loader without the DI container.

@@ -44,7 +44,8 @@ final readonly class FileEnvSecretProvider implements SecretProviderInterface
     private function readFilePathFromEnv(SecretKey $key): ?string
     {
         $envKey = $key->upperCase . '_FILE';
-        $filePath = trim((string)(getenv($envKey) ?: ''));
+        $env = getenv($envKey);
+        $filePath = false === $env ? '' : trim($env);
         if ($filePath === '' || !is_readable($filePath)) {
             return null;
         }
