@@ -1,3 +1,10 @@
+## [0.6.4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.3...v0.6.4) (2026-07-28)
+
+
+### Bug Fixes
+
+* **processor:** say so when a secret placeholder resolves to nothing ([3573dfc](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/3573dfcc3ecff576ca97c6c60a8c70be8709a936))
+
 ## [0.6.3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.2...v0.6.3) (2026-07-24)
 
 
