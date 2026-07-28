@@ -47,4 +47,46 @@ final class SecretPlaceholderProcessorTest extends TestCase
             $this->processor->canProcess('%someValue%', [])
         );
     }
+
+    #[Test]
+    public function resolvesTheSecretThroughTheFileEnvProvider(): void
+    {
+        $file = tempnam(sys_get_temp_dir(), 'secret');
+        self::assertIsString($file);
+        // Trailing newline on purpose: files written by an editor or by
+        // `echo` carry one, and the value must arrive without it.
+        file_put_contents($file, "s3cr3t\n");
+        putenv('SECRET_PROCESSOR_TEST_FILE=' . $file);
+
+        try {
+            self::assertSame('s3cr3t', $this->processor->process('SECRET_PROCESSOR_TEST', []));
+        } finally {
+            putenv('SECRET_PROCESSOR_TEST_FILE');
+            unlink($file);
+        }
+    }
+
+    /**
+     * The empty string is the documented fallback, not an oversight — see the
+     * note on reportMiss(). It is pinned here because the value is silent by
+     * nature: nothing downstream can tell it apart from a secret that really
+     * is empty, so a change of mind about it has to be a deliberate one.
+     */
+    #[Test]
+    public function anUnresolvableSecretYieldsAnEmptyStringRatherThanFailing(): void
+    {
+        putenv('SECRET_PROCESSOR_ABSENT_FILE');
+
+        self::assertSame('', $this->processor->process('SECRET_PROCESSOR_ABSENT', []));
+    }
+
+    #[Test]
+    public function anInvalidKeyIsRejectedInsteadOfSilentlyResolvingToNothing(): void
+    {
+        // Path traversal must not reach the /run/secrets provider. Failing
+        // loudly here is right: the key is malformed, not merely absent.
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->processor->process('runsecrets:../../etc/passwd', []);
+    }
 }

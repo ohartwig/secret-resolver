@@ -41,9 +41,41 @@ final readonly class SecretPlaceholderProcessor implements PlaceholderProcessorI
         $resolved = $service->resolve($key);
 
         if ($resolved === null) {
+            $this->reportMiss($key);
+
             return '';
         }
 
         return $resolved;
+    }
+
+    /**
+     * An unresolved secret still yields an empty string, and that is deliberate:
+     * this runs while the site configuration is being read, so throwing would
+     * take down every environment that legitimately lacks the secret — a
+     * developer machine without /run/secrets, a CI container building a cache.
+     *
+     * What is not acceptable is doing it quietly. An empty string is
+     * indistinguishable from a configured empty value, so the symptom surfaces
+     * far from the cause: a remote API answering 401, or a credential check
+     * that no longer checks anything. This note is the only link between the
+     * two, so it names the key that failed.
+     *
+     * The key NAME is safe to write out — it is what the YAML already says.
+     * The value is never touched here; there is none.
+     *
+     * error_log() rather than the TYPO3 logger on purpose: placeholders are
+     * expanded during configuration loading, before logging is configured, and
+     * a logger that is not ready yet would turn a warning into a boot failure.
+     */
+    private function reportMiss(SecretKey $key): void
+    {
+        error_log(sprintf(
+            'secret-resolver: placeholder "%%secret(%s)%%" could not be resolved by any provider; '
+            . 'substituting an empty string. Check the %s_FILE environment variable or /run/secrets/%s.',
+            $key->raw,
+            $key->upperCase,
+            $key->lowerCase,
+        ));
     }
 }
