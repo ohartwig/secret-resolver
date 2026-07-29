@@ -1,3 +1,10 @@
+## [0.6.5](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.4...v0.6.5) (2026-07-29)
+
+
+### Bug Fixes
+
+* **docs:** point at the handbook repository, not an unreachable domain ([4cf17b8](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/4cf17b85590bac439c8892040eaf1ecc506418e3))
+
 ## [0.6.4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.3...v0.6.4) (2026-07-28)
 
 
