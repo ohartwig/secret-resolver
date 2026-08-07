@@ -36,7 +36,7 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.52",
-        "moselwal/dev": "^5.0"
+        "moselwal/dev-typo3": "^1.0"
     },
     "repositories": [
         {
