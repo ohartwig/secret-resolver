@@ -1,3 +1,10 @@
+# [0.7.0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.5...v0.7.0) (2026-08-07)
+
+
+### Features
+
+* **commit-signing:** add .gitsigners + lefthook hint (G-SDLC-002 step 3) ([bc391df](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/bc391dfec86df48800bb731411527d6ad38f95b9))
+
 ## [0.6.5](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.4...v0.6.5) (2026-07-29)
 
 
