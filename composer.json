@@ -31,7 +31,7 @@
         "docs": "https://moselwal.de/open-source/secret-resolver"
     },
     "require": {
-        "php": "^8.5",
+        "php": "^8.5.9",
         "typo3/cms-core": "^14.0"
     },
     "require-dev": {
