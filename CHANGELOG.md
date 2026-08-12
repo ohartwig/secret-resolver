@@ -1,3 +1,10 @@
+# [0.8.0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.7.0...v0.8.0) (2026-08-12)
+
+
+### Features
+
+* **commit-signing:** populate both trust anchors ([e19a5ef](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/e19a5efb608690ae40545f62a0be87adc2a4244f))
+
 # [0.7.0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.6.5...v0.7.0) (2026-08-07)
 
 
