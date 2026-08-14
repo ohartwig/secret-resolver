@@ -1,3 +1,11 @@
+## [0.8.2](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.1...v0.8.2) (2026-08-14)
+
+
+### Bug Fixes
+
+* allow the infection extension installer plugin ([34631d7](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/34631d77647c50495a677ebc43534686f9197b62))
+* **ci:** point at the current hosts ([c630681](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c630681c12e1d6dc49e8e9187014fd4acc668f28))
+
 ## [0.8.1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.0...v0.8.1) (2026-08-12)
 
 
