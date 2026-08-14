@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: secret-resolver
 Upstream-Contact: Kai Ole Hartwig <support@ole-hartwig.eu>
-Source: https://gitlab.moselwal.io/development/moselwal/secret-resolver
+Source: https://git.ole-hartwig.eu/development/moselwal/secret-resolver
 
 Files: *
 Copyright: 2026 Moselwal Digitalagentur GmbH, Kai Ole Hartwig
