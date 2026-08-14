@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 /*
  * SPDX-FileCopyrightText: 2026 Moselwal Digitalagentur <info@moselwal.de>
+ * SPDX-FileCopyrightText: 2026  Kai Ole Hartwig <mail@ole-hartwig.eu>
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
