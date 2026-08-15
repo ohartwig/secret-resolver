@@ -78,7 +78,15 @@ final class SecretPlaceholderProcessorTest extends TestCase
     {
         putenv('SECRET_PROCESSOR_ABSENT_FILE');
 
-        self::assertSame('', $this->processor->process('SECRET_PROCESSOR_ABSENT', []));
+        $log = self::captureErrorLog(function (): void {
+            self::assertSame('', $this->processor->process('SECRET_PROCESSOR_ABSENT', []));
+        });
+
+        // The empty string is only defensible because the miss is announced,
+        // so the note is part of the contract and not incidental output. It
+        // has to name the key — that name is the only thing linking the
+        // symptom back to the placeholder that produced it.
+        self::assertStringContainsString('SECRET_PROCESSOR_ABSENT', $log);
     }
 
     #[Test]
@@ -89,5 +97,35 @@ final class SecretPlaceholderProcessorTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
 
         $this->processor->process('runsecrets:../../etc/passwd', []);
+    }
+
+    /**
+     * Runs $callback with error_log() diverted into a file and returns what it
+     * wrote.
+     *
+     * Without the diversion the note goes to the SAPI error logger, which on
+     * CLI is STDERR — and Infection stops the initial test run on the first
+     * byte that appears there (Process\Runner\InitialTestsRunner), which shows
+     * up as a killed PHPUnit process rather than as a failing test. So a test
+     * touching reportMiss() has to catch the note rather than let it escape.
+     *
+     * @param \Closure(): void $callback
+     */
+    private static function captureErrorLog(\Closure $callback): string
+    {
+        $logFile = tempnam(sys_get_temp_dir(), 'secret-log');
+        self::assertIsString($logFile);
+
+        $previous = ini_get('error_log');
+        ini_set('error_log', $logFile);
+
+        try {
+            $callback();
+
+            return (string) file_get_contents($logFile);
+        } finally {
+            ini_set('error_log', $previous === false ? '' : $previous);
+            unlink($logFile);
+        }
     }
 }
