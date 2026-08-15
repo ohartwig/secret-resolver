@@ -1,3 +1,10 @@
+## [0.8.3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.2...v0.8.3) (2026-08-15)
+
+
+### Bug Fixes
+
+* **tests:** let Infection run the suite to completion ([5c94fdc](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/5c94fdc8a9c56153f68fd928dfc43b7d511d090d))
+
 ## [0.8.2](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.1...v0.8.2) (2026-08-14)
 
 
