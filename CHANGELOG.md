@@ -1,3 +1,9 @@
+## [0.8.4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.3...v0.8.4) (2026-08-15)
+
+### :repeat: Chores
+
+* **ci:** drop the local .releaserc.yml, which was overriding the preset ([8d16598](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/8d165989b6444144962752c61acac5b177ce51c5))
+
 ## [0.8.3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.2...v0.8.3) (2026-08-15)
 
 
