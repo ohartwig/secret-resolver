@@ -1,3 +1,9 @@
+## [0.8.6](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.5...v0.8.6) (2026-09-02)
+
+### :bug: Fixes
+
+* **deps:** update dependency php to ^8.5.10 ([1508e53](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/1508e53351606919d35a5dfc5bf5d28b9b95f0e9))
+
 ## [0.8.5](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.4...v0.8.5) (2026-08-22)
 
 ### :repeat: Chores
