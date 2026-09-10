@@ -1,3 +1,10 @@
+## [0.8.8](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.7...v0.8.8) (2026-09-10)
+
+### :repeat: Chores
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2 ([71917dd](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/71917ddf9d9336d6bd4b257dd9b271a68a6d229f))
+* **deps:** update dependency ergebnis/composer-normalize to ^2.53.0 ([ba0a215](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/ba0a215c758af1853d2cf47a871898e335cf9944))
+
 ## [0.8.7](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.6...v0.8.7) (2026-09-02)
 
 ### :repeat: Chores
