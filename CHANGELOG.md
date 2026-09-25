@@ -1,3 +1,33 @@
+## [0.8.9](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.8...v0.8.9) (2026-09-25)
+
+### :repeat: Continuous Integrations
+
+* components by rolling major, as every consumer should ([86593ee](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/86593ee2fc370bb2ac31a707f506e19f080b96dc))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.5.0 ([510a485](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/510a485af2eea54d41d81e178c7b9870616cf718))
+* release with yasrt, the tag pipeline kept ([05332fb](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/05332fb7dd84f6373401342c504f5f46c5ca4afc))
+
+### :repeat: Chores
+
+* **deps:** update dependency ergebnis/composer-normalize to ^2.54.0 ([42dd19f](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/42dd19f41c8e966337d5ae71bf2986782fa63a08))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.4.2 ([a1c8855](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/a1c8855a9615cd8d28b26d41c304992b0c9ab3aa))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.4.1 ([27cedfe](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/27cedfe6b827b7a675609ec0ee4797850af33ca3))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.48 ([d025def](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/d025def962782d5b99ecdbbcf1a71370134f0df9))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.47 ([bdcbce1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/bdcbce1b44e53e80a9e6231d16044ea9a470105f))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.46 ([9e6be9a](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/9e6be9af49ff9ec1c23ee07025fcb16c9c1ad02c))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.45 ([c4a306a](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c4a306a6129d08e9ed0d31ef37042ca1066db213))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.44 ([e576d59](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/e576d59a58c6863f6cf57a5aa585e86a3625e075))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.43 ([8e95758](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/8e957584be5447e97b65618b175f69c6d06da54a))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.42 ([7c2cf43](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/7c2cf43b0fcf9dff394490f6dcb733877430f369))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.40 ([44eafcf](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/44eafcfc686f8a7cf4fd00262c8beb0180823184))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.39 ([a857843](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/a857843aa51084778503a4f64f21ebf105cbeb99))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.38 ([8124eb7](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/8124eb7c8db444ce6f4df33ae764cbacedf9d1e8))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.37 ([a25d4d0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/a25d4d0e8e6e933aaee040a37b9cb3825211be7c))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.36 ([4943ebe](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/4943ebe46c1f1d47209fd4f9b0d9b1ef7bc9f3ef))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.35 ([fe0bf3e](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/fe0bf3e3d56f226543c7152209e5c21baea02374))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.34 ([afa7698](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/afa76987659b1695141a09794cbe5301f31753b3))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.32 ([4932b2e](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/4932b2eb113b8fa82862ee7f311d2d6e3e6ebc89))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.3.31 ([bbecdc0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/bbecdc0364a86175d40af65c39c9387fa35e8239))
+
 ## [0.8.8](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.7...v0.8.8) (2026-09-10)
 
 ### :repeat: Chores
