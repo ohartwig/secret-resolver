@@ -15,7 +15,6 @@
         {
             "name": "Kai Ole Hartwig",
             "email": "support@ole-hartwig.eu",
-            "homepage": "https://moselwal.de",
             "role": "Maintainer"
         },
         {
@@ -24,11 +23,10 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://moselwal.de",
+    "homepage": "https://github.com/ohartwig/secret-resolver",
     "support": {
-        "issues": "https://github.com/Moselwal-Digitalagentur/secret-resolver/issues",
-        "source": "https://github.com/Moselwal-Digitalagentur/secret-resolver",
-        "docs": "https://moselwal.de/open-source/secret-resolver"
+        "issues": "https://github.com/ohartwig/secret-resolver/issues",
+        "source": "https://github.com/ohartwig/secret-resolver"
     },
     "require": {
         "php": "^8.5.11",
