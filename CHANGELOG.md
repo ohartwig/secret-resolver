@@ -1,3 +1,19 @@
+## [0.9.0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.10...v0.9.0) (2026-09-28)
+
+### :sparkles: Features
+
+* **license:** relicense the package under GPL-2.0-or-later ([a764100](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/a764100a950c0042329e4677e690481a264ccfd7))
+
+### :repeat: Continuous Integrations
+
+* stop publishing to the TER ([149b906](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/149b9068ed007d1aab871600e49920ac7ac51549))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.3 ([84f2925](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/84f2925c1ac8538d9b78fc01e85fa19cdce9d2b1))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.2 ([1834f2d](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/1834f2d3b97cca48fe1fc8d13c5ddb5a052d0851))
+
+### :repeat: Chores
+
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.1 ([72ed9f3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/72ed9f3faf370457078f72a5bd3c61ab5d078f18))
+
 ### :scroll: Licence
 
 The licence changed from MIT to GPL-2.0-or-later as of v0.9.0; earlier releases remain available under MIT.
