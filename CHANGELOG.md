@@ -1,3 +1,22 @@
+## [0.8.10](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.9...v0.8.10) (2026-09-28)
+
+### :memo: Documentation
+
+* give the shell examples in CONTRIBUTING.md a language ([d576aff](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/d576aff7bab309c91b334ddd7c3c54840988de5c))
+* add full licence text, contribution guide and code of conduct ([26ac75f](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/26ac75f8e053d45ec10bd8a2a99658478ed07dcc))
+
+### :repeat: Continuous Integrations
+
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.5.5 ([b4383b0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/b4383b05eaeaa8639acfa8caf8dc211b694a016e))
+
+### :repeat: Chores
+
+* **ci:** mirror to the GitHub repository by its current name ([cb1a1b6](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/cb1a1b611e8826d2ef1e6d3efc383c57534910ae))
+* point package metadata at the public GitHub repository ([3fce100](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/3fce10006d229576fb3e1a19a41a4c19c042a7ab))
+* **repo-templates:** sync ([d3eafed](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/d3eafed7db358edb0b9e3b189f4292e341098cf8))
+* **deps:** update dependency mstruebing/editorconfig-checker to v3.11.3 ([a554e1c](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/a554e1c2c03843575f6cc934f528808135d9408a))
+* **repo-templates:** sync ([49408bd](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/49408bd99f18d051a778da0575221a0292f01258))
+
 ## [0.8.9](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.8...v0.8.9) (2026-09-25)
 
 ### :repeat: Continuous Integrations
