@@ -1,7 +1,7 @@
 {
     "name": "moselwal/secret-resolver",
     "description": "Runtime secret resolution for TYPO3 site configuration — cascading lookup from secret files, /run/secrets/ mounts, and environment variables via %secret(KEY)% placeholder syntax.",
-    "license": "MIT",
+    "license": "GPL-2.0-or-later",
     "type": "typo3-cms-extension",
     "keywords": [
         "typo3",

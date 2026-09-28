@@ -207,3 +207,9 @@ certificate: '%secret(vault:pki/issue/my-cert)%'
 
 - PHP ^8.3
 - TYPO3 ^14.0
+
+## License
+
+GPL-2.0-or-later — see [LICENSE](LICENSE) for details. Releases up to and
+including v0.8.10 were published under the MIT License and remain available
+under it.

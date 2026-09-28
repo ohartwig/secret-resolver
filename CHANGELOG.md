@@ -1,3 +1,7 @@
+### :scroll: Licence
+
+The licence changed from MIT to GPL-2.0-or-later as of v0.9.0; earlier releases remain available under MIT.
+
 ## [0.8.10](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.9...v0.8.10) (2026-09-28)
 
 ### :memo: Documentation
