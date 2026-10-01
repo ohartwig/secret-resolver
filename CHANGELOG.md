@@ -1,3 +1,19 @@
+## [0.9.1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.0...v0.9.1) (2026-10-01)
+
+### :repeat: Continuous Integrations
+
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.5.6 ([fad0e8f](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/fad0e8fba15d2f26e725e6aa551f5c77f9ab3542))
+* follow composed-default-pipelines on the rolling major tag ([9c1a099](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/9c1a099e0116a0db0751c76bc634b9208c169add))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.18 ([36d662e](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/36d662ef9072fcde51c2a0df167cabaf40289ff3))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.17 ([9ba3a7c](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/9ba3a7ce6626bf3a0a761c2c535e1de26bed0044))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.15 ([c9e5ea5](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c9e5ea59a30e8d3f7099b1a99be7f2cae0a78e23))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.12 ([6d87418](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/6d87418ada902d9992a284716c1b42ed3f35655f))
+* **deps:** update dependency devops/ci-cd-components/composed-default-pipelines to v2.21.9 ([997760f](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/997760f746314f30e22d2a4b638c4c5f726f55ba))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([792da52](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/792da526a001cfcbcddb122b0577ffdcca8643bf))
+
 ## [0.9.0](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.8.10...v0.9.0) (2026-09-28)
 
 ### :sparkles: Features
