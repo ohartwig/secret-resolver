@@ -1,3 +1,13 @@
+## [0.9.2](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.1...v0.9.2) (2026-10-05)
+
+### :repeat: Continuous Integrations
+
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.5.7 ([c16776f](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c16776fd192cfd6ce4595a7ad4290d9221e6fe54))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([7b041d7](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/7b041d78ccd2c7b2bbc87748f8479f41342bb19a))
+
 ## [0.9.1](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.0...v0.9.1) (2026-10-01)
 
 ### :repeat: Continuous Integrations
