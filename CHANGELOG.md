@@ -1,3 +1,16 @@
+## [0.9.3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.2...v0.9.3) (2026-10-16)
+
+### :repeat: Continuous Integrations
+
+* drop the TER publish, Packagist is enough ([d0d690d](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/d0d690d2e9f069a479d61b1af80a4121b805d0e4))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.7.0 ([c187579](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c187579766f6042dfac1bbc4ee7ce97f4d41994a))
+* publish releases to the TYPO3 Extension Repository ([7b429bc](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/7b429bc7de8f669725e1082e1d2f92e1f5125d7d))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.6.0 ([7023de3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/7023de30aeaabe8b4976e810c9f1df9e367ec6d4))
+
+### :repeat: Chores
+
+* **repo-templates:** sync ([c81c534](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/c81c534d4ea6742c34f7ac3d2d343d49100e6c6c))
+
 ## [0.9.2](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.1...v0.9.2) (2026-10-05)
 
 ### :repeat: Continuous Integrations
