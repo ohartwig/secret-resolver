@@ -1,3 +1,13 @@
+## [0.9.4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.3...v0.9.4) (2026-10-21)
+
+### :bug: Fixes
+
+* **deps:** update dependency php to ^8.5.12 ([8daf87d](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/8daf87db1aeae0a11f05a7e690c126c8a530c37c))
+
+### :repeat: Continuous Integrations
+
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.7.1 ([7b18be9](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/7b18be92c9bd636bdd3503b74ed25f5769b998c8))
+
 ## [0.9.3](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.2...v0.9.3) (2026-10-16)
 
 ### :repeat: Continuous Integrations
