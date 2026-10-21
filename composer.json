@@ -29,7 +29,7 @@
         "source": "https://github.com/ohartwig/secret-resolver"
     },
     "require": {
-        "php": "^8.5.11",
+        "php": "^8.5.12",
         "typo3/cms-core": "^14.0"
     },
     "require-dev": {
