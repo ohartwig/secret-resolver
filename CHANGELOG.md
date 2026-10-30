@@ -1,3 +1,9 @@
+## [0.9.6](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.5...v0.9.6) (2026-10-30)
+
+### :repeat: Chores
+
+* **deps:** update dependency ergebnis/composer-normalize to ^2.56.0 ([06e32bb](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/06e32bb86c8ec07ccc5ddb1517a3f5faa5967247))
+
 ## [0.9.5](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.4...v0.9.5) (2026-10-30)
 
 ### :white_check_mark: Tests
