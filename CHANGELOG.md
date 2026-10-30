@@ -1,3 +1,20 @@
+## [0.9.5](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.4...v0.9.5) (2026-10-30)
+
+### :white_check_mark: Tests
+
+* skip hand-wired services the container removed as unused ([d1b5f53](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/d1b5f53c41c2e97a07ed0c259dbe62bfd0f08d95))
+* build the DI container in this repository's pipeline ([748c255](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/748c255b996504aad0cadf4b47d4faa779046af9))
+
+### :repeat: Continuous Integrations
+
+* follow components on the rolling major tag ([209a3b6](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/209a3b693ccfd2b041b8742556153b7220f2518e))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.7.3 ([0b7a0b4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/0b7a0b407d13f8073f23acb969bab904d6047f3c))
+* **deps:** update dependency devops/ci-cd-components/extension-clean-export to v1.7.2 ([20cd703](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/20cd703e4a53c80ee08bffaf2617c67fe74f74aa))
+
+### :repeat: Chores
+
+* **deps:** update dependency davidanson/markdownlint-cli2 to v0.24.0 ([23be8b4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/23be8b4d6b08bda6886316cdbbcfa0cc97b4fd79))
+
 ## [0.9.4](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.3...v0.9.4) (2026-10-21)
 
 ### :bug: Fixes
