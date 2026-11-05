@@ -1,3 +1,9 @@
+## [0.9.7](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.6...v0.9.7) (2026-11-05)
+
+### :bug: Fixes
+
+* **test:** make test:infection start under PHPUnit 13 ([be5700e](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/commit/be5700e220fa08111d89c41e614fdc3f82e6d599))
+
 ## [0.9.6](https://git.ole-hartwig.eu/development/moselwal/secret-resolver/compare/v0.9.5...v0.9.6) (2026-10-30)
 
 ### :repeat: Chores
